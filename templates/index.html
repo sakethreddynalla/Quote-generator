@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            width: 60%;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            position: relative;
+        }
+
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-decoration: none;
+            color: black;
+            box-sizing: border-box;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+
+        <h1>🤖 AI Quote Generator</h1>
+
+        <p style="font-size:20px;">
+            "{{ quote }}"
+        </p>
+
+        <p><b>— {{ author }}</b></p>
+
+        <br>
+
+        <form method="get">
+            <button type="submit">Generate New Quote</button>
+        </form>
+    </div>
+
+</body>
+</html>
